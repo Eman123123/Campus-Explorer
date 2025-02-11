@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #697fa7;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.footer {
+    background-color: #697fa7;
+    color: white;
+    padding: 3rem 0 0;
+    margin-top: 4rem;
+  }
+  
+  .footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .footer h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .footer p,
+  .footer ul {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .footer a:hover {
+    opacity: 0.8;
+  }
+  
+  .footer form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .footer input {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .footer button {
+    padding: 0.5rem 1rem;
+    background-color: #697fa7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer button:hover {
+    background-color: #697fa7;
+
+  }
+  
+  .footer > div:last-child {
+    background-color: #697fa7;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  .footer > div:last-child .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .footer > div:last-child p {
+    margin: 0;
+  }
+  
+  .footer > div:last-child div {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .footer .container {
+      grid-template-columns: 1fr;
+    }
+  
+    .footer form {
+      flex-direction: column;
+    }
+  
+    .footer > div:last-child .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer > div:last-child div {
+      justify-content: center;
+    }
+  }
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1;
+  }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.nav-links li {
+  margin-left: 1rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Search section styles */
+.search-section {
+  background-color: #fff;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.search-form input,
+.search-form select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.search-form button {
+  padding: 0.5rem 1rem;
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* University listings styles */
+.university-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.university-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.university-card:hover {
+  transform: translateY(-5px);
+}
+.university-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.university-info {
+  padding: 1rem;
+}
+.university-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.university-location {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+  }
+  .university-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
