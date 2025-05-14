@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>eLEARNING - eLearning HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+  #dropdown {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    width: 250px;
+    background: white;
+    z-index: 10;
+  }
+  #dropdown button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 8px;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  #dropdown button:hover {
+    background: #d32f2f;
+  }
+</style>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+      <h2 class="m-0 text-primary"><i class="fa fa-university me-3"></i>Campus Explorer</h2>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <a href="index.html" class="nav-item nav-link active">Home</a>
+        <a href="university.html" class="nav-item nav-link">Universities</a>
+        <a href="Ranking.html" class="nav-item nav-link">Ranking</a>
+        <a href="Department.html" class="nav-item nav-link">Department</a>
+        <a href="contact.html" class="nav-item nav-link">Contact</a>
+        <a href="reviews.html" class="nav-item nav-link">Review</a>
+
+        <div id="userProfile" style="display: none; position: absolute; top: 10px; right: 20px;">
+        </div>
+        <div id="profile-container" style="display: inline-block; position: relative;">
+  <img
+    src="https://www.gravatar.com/avatar/?d=mp"
+    id="profile-icon"
+    style="width: 32px; height: 32px; border-radius: 50%; cursor: pointer;" />
+    
+  <div id="dropdown" style="display: none; position: absolute; top: 40px; right: 0; background: #fff; border: 1px solid #ccc; border-radius: 5px; padding: 10px;">
+    <div id="user-email"></div>
+    <button onclick="logout()">Logout</button>
+    <button onclick="deleteAccount()" style="background: #ff4444; margin-top: 5px;">Delete Account</button>
+
+  </div>
+</div>
+      </div>
+    </div>
+  </nav>
+    <!-- Navbar End -->
+    <!-- Carousel Start -->
+ <!-- Hero Section Start -->
+<div class="container-fluid p-0 mb-5">
+    <div class="owl-carousel header-carousel position-relative">
+        <!-- Slide 1 -->
+        <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="https://cdn.dhapage.com/images/posts/958b59ffc14469378a966c6d52f4ec1b.jpg" alt="Fast University Image">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, 0.7);">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-sm-10 col-lg-8">
+                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Explore Top Universities</h5>
+                            <h1 class="display-3 text-white animated slideInDown">Find The Right University For Your Future</h1>
+                            <p class="fs-5 text-white mb-4 pb-2">Compare university rankings, programs, and locations to discover the best academic fit for your goals.</p>
+                            <a href="University.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Start Exploring</a>
+                            <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="owl-carousel-item position-relative">
+            <img class="img-fluid"  src="https://cdn.moawin.pk/images/2024/Comsats-University.jpg" alt="Comsat University Image">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, 0.7);">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-sm-10 col-lg-8">
+                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Smart Search Tool</h5>
+                            <h1 class="display-3 text-white animated slideInDown">Search Universities by Location, Rank & Department</h1>
+                            <p class="fs-5 text-white mb-4 pb-2">Use our advanced filters to find universities based on your preferences and academic interests.</p>
+                            <a href="Department.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search Now</a>
+                            <a href="login.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero Section End -->
+    <!-- Carousel End -->
+    <!-- Service Start -->
+   <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h2 class="section-title text-primary text-uppercase mb-3">Why Choose Campus Explorer?</h2>
+                <p class="mb-5 fs-5 text-secondary">Empowering students with tools to find the best university that matches their goals.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-balance-scale text-primary mb-4"></i>
+                            <h5 class="mb-3">Compare Universities</h5>
+                            <p>Easily compare rankings, programs, and fees to find the best university for your future.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-star text-primary mb-4"></i>
+                            <h5 class="mb-3">Student Reviews</h5>
+                            <p>Read honest reviews from students about campus life, academics, and faculty experiences.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-line-chart text-primary mb-4"></i>
+                            <h5 class="mb-3">University Rankings</h5>
+                            <p>Stay updated with the latest national and global university rankings across various disciplines.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-search text-primary mb-4"></i>
+                            <h5 class="mb-3">Browse Courses</h5>
+                            <p>Search programs by department, location, degree level, or career outcomes to explore your options.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!-- Service End -->
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Image Column -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt="About Campus Explorer" style="object-fit: cover;">
+                    </div>
+                </div>
+                <!-- Text Column -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
+                    <h1 class="mb-4">Welcome to Campus Explorer</h1>
+                    <p class="mb-4">Campus Explorer helps students explore, compare, and connect with universities that align with their academic goals, budget, and interests.</p>
+                    <p class="mb-4">We provide in-depth information on programs, campus life, scholarships, and verified student reviews — all in one place, so you can make confident education decisions.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>University Comparisons</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Verified Student Reviews</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Personalized Recommendations</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Admission Guidance</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Scholarship Alerts</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Course Finder Tools</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About End -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Universities</h6>
+                <h1 class="mb-5">Our Partner Institutions</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light h-100">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6wJ8uUVMYgi-9dCEO-PRYl0gK1R3aG006VQ&s" alt="University of the Punjab">
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">University of the Punjab</h5>
+                            <small>Lahore</small>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-light h-100">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="https://i0.wp.com/jaamiah.com/wp-content/uploads/2019/06/University-of-Central-Punjab-1.jpg" alt="University of Central Punjab">
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">University of Central Punjab</h5>
+                            <small>Lahore</small>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item bg-light h-100">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="https://nust.edu.pk/wp-content/uploads/2022/01/University-authorities-2.jpg" alt="NUST">
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">NUST</h5>
+                            <small>Islamabad</small>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item bg-light h-100">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScMXfr-SOOY4GlDhS8P5oTTm45VpAQYS58Zw&s" alt="University of Agriculture">
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">University of Agriculture</h5>
+                            <small>Faisalabad</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+            <h1 class="mb-5">Our Students Say!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Areeba Khan</h5>
+                <p>Computer Science Student</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">This website made it super easy to explore different universities, compare programs, and find the best fit for my future education.</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Zain Raza</h5>
+                <p>Software Engineering Student</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">A very helpful platform for students researching colleges. All the important details are available in one place. It saved me a lot of time!</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="img/team-4.jpg" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Ahmed Ali</h5>
+                <p>Data Science Student</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">This site saved me hours of research! I quickly found universities that matched my course interests and location preferences.</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="img/team-3.jpg" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Fatima Zahra</h5>
+                <p>AI & Robotics Student</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Loved how easy it was to search for universities and compare them based on my preferences. Definitely a student-friendly platform.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="#">About Us</a>
+                    <a class="btn btn-link" href="#">Contact Us</a>
+                    <a class="btn btn-link" href="#">Privacy Policy</a>
+                    <a class="btn btn-link" href="#">Terms & Conditions</a>
+                    <a class="btn btn-link" href="#">Support & FAQs</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fab fa-instagram me-3"></i><a class="text-light" href="https://instagram.com/yourpage" target="_blank">Follow us on Instagram</a></p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+92 300 1234567</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@edulink.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/courses-1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/courses-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/courses-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/courses-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/courses-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/courses-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Newsletter</h4>
+                    <p>Subscribe to get the latest updates and resources delivered to your inbox.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">EduLink</a>, All Rights Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="#">Home</a>
+                            <a href="#">Cookies</a>
+                            <a href="#">Support</a>
+                            <a href="#">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+  // Show user email and enable dropdown if email is found in storage
+  document.addEventListener('DOMContentLoaded', function() {
+    const userEmail = localStorage.getItem("userEmail");
+    if (userEmail) {
+      document.getElementById("user-email").innerText = userEmail;
+      document.getElementById("profile-container").style.display = "inline-block";
+    } else {
+      document.getElementById("profile-container").style.display = "none";
+    }
+  });
+
+  // Toggle dropdown visibility
+  document.getElementById("profile-icon").addEventListener("click", function(e) {
+    e.stopPropagation();
+    const dropdown = document.getElementById("dropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('#profile-container')) {
+      document.getElementById("dropdown").style.display = "none";
+    }
+  });
+
+  // Logout function
+  function logout() {
+    localStorage.removeItem("userEmail");
+    window.location.href = "login.html";
+  }
+
+  // Delete account function (corrected)
+  async function deleteAccount() {
+    const email = localStorage.getItem('userEmail');
+    if (!email) {
+      alert('No user logged in!');
+      return;
+    }
+    const password = prompt('Enter your password to confirm account deletion:');
+    if (!password) return;
+
+    if (!confirm('WARNING: This will permanently delete your account and all data. Continue?')) {
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3000/delete-account', {
+        method: 'DELETE',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Account deletion failed');
+      }
+
+      const result = await response.json();
+      alert(result.message || 'Account deleted successfully');
+      localStorage.removeItem('userEmail');
+      window.location.href = 'login.html';
+      
+    } catch (err) {
+      console.error('Deletion error:', err);
+      alert(err.message || 'Failed to connect to server. Please check your network and try again.');
+    }
+  }
+</script>
+</body>
+</html>

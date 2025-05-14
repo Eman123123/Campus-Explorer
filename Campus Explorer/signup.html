@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9naW58ZW58MHx8MHx8fDA%3D");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .auth-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .auth-container h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        /* Input Groups */
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        /* Sign Up Button */
+        .btn-signup {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: rgba(98, 156, 164, 0.733);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-signup:hover {
+            background-color: rgba(98, 156, 164, 0.9);
+        }
+
+        /* Login Section */
+        .login-section {
+            margin-top: 1.5rem;
+        }
+
+        .login-section p {
+            color: black;
+        }
+
+        .login-section a {
+            color: black;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .login-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back Button */
+        .back-button {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background-color: rgba(98, 156, 164, 0.733);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: rgba(98, 156, 164, 0.9);
+        }
+
+        /* Account exists section */
+        .account-exists {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #fff3cd;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .account-exists p {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Sign Up</h2>
+        <form data-action="signup">
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <p id="emailError" class="error-message" style="display: none;">Email must end with @gmail.com, @cfd.nu.edu.pk, or @yahoo.com</p>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+                <p id="passwordError" class="error-message" style="display: none;">Password must be at least 8 characters long</p>
+            </div>
+            <div class="input-group">
+                <input type="number" id="age" placeholder="Age" required min="18" max="100">
+                <p id="ageError" class="error-message" style="display: none;">Age must be between 18 and 100</p>
+            </div>
+            <div class="input-group">
+                <input type="tel" id="phone-number" placeholder="Phone Number" required pattern="[0-9]{10}" title="Phone number must be 10 digits">
+                <p id="phoneError" class="error-message" style="display: none;">Phone number must be 10 digits</p>
+            </div>
+            <button type="submit" class="btn-signup">Sign Up</button>
+        </form>
+
+        <!-- Account exists section -->
+        <div id="accountExists" class="account-exists">
+            <p>This email is already registered.</p>
+            <button id="loginInstead" class="btn-signup" style="margin-top: 0.5rem;">Login Instead</button>
+            <button id="deleteAccount" class="btn-delete">Delete Existing Account</button>
+        </div>
+
+        <!-- Delete confirmation section -->
+        <div id="deleteConfirm" class="account-exists" style="display: none;">
+            <p>Enter your password to delete your account:</p>
+            <input type="password" id="deletePassword" placeholder="Your password" class="input-group" style="width: 100%;">
+            <button id="confirmDelete" class="btn-delete">Confirm Delete</button>
+            <button id="cancelDelete" class="btn-signup" style="margin-top: 0.5rem;">Cancel</button>
+        </div>
+
+        <div class="login-section">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+
+        <button id="backButton" class="back-button">Back</button>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector('form[data-action="signup"]');
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const ageInput = document.getElementById("age");
+        const phoneNumberInput = document.getElementById("phone-number");
+        const backButton = document.getElementById("backButton");
+        const emailError = document.getElementById("emailError");
+        const passwordError = document.getElementById("passwordError");
+        const ageError = document.getElementById("ageError");
+        const phoneError = document.getElementById("phoneError");
+        const accountExists = document.getElementById("accountExists");
+        const loginInstead = document.getElementById("loginInstead");
+        const deleteAccount = document.getElementById("deleteAccount");
+        const deleteConfirm = document.getElementById("deleteConfirm");
+        const deletePassword = document.getElementById("deletePassword");
+        const confirmDelete = document.getElementById("confirmDelete");
+        const cancelDelete = document.getElementById("cancelDelete");
+
+        emailInput.addEventListener("input", function () {
+            if (validateEmail(emailInput.value)) {
+                emailError.style.display = "none";
+                passwordInput.disabled = false;
+            } else {
+                passwordInput.disabled = true;
+                ageInput.disabled = true;
+                phoneNumberInput.disabled = true;
+            }
+        });
+
+        passwordInput.addEventListener("input", function () {
+            if (validatePassword(passwordInput.value)) {
+                passwordError.style.display = "none";
+                ageInput.disabled = false;
+                phoneNumberInput.disabled = false;
+            } else {
+                ageInput.disabled = true;
+                phoneNumberInput.disabled = true;
+            }
+        });
+
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const email = emailInput.value.trim();
+            const password = passwordInput.value.trim();
+            const age = ageInput.value.trim();
+            const phoneNumber = phoneNumberInput.value.trim();
+
+            if (!validateEmail(email)) {
+                alert("Email must end with @gmail.com, @cfd.nu.edu.pk, or @yahoo.com");
+                return;
+            }
+
+            if (!validatePassword(password)) {
+                alert("Password must be at least 8 characters long.");
+                return;
+            }
+
+            if (!validateAge(age)) {
+                alert("Age must be between 18 and 100.");
+                return;
+            }
+
+            if (!validatePhoneNumber(phoneNumber)) {
+                alert("Phone number must be 10 digits.");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:3000/signup", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password,
+                        age: age,
+                        phoneNumber: phoneNumber
+                    })
+                });
+
+                const data = await response.json();
+                if (response.status === 409) {
+        // Email already exists
+        accountExists.style.display = "block";
+    } else if (response.ok && data.success) {
+        alert("Sign Up Successful!");
+        window.location.href = "login.html";
+    } else {
+        alert("Sign Up Failed: " + (data.message || "Unknown error"));
+    }
+            
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            }
+        });
+
+        // Handle back button click
+        backButton.addEventListener("click", function () {
+            history.back();
+        });
+
+        // Handle login instead button
+        loginInstead.addEventListener("click", function() {
+            window.location.href = "login.html";
+        });
+
+        // Handle delete account button
+        deleteAccount.addEventListener("click", function() {
+            accountExists.style.display = "none";
+            deleteConfirm.style.display = "block";
+        });
+
+        // Handle cancel delete
+        cancelDelete.addEventListener("click", function() {
+            deleteConfirm.style.display = "none";
+            accountExists.style.display = "block";
+        });
+
+        // Handle confirm delete
+        confirmDelete.addEventListener("click", async function() {
+            const email = emailInput.value.trim();
+            const password = deletePassword.value.trim();
+
+            if (!password) {
+                alert("Please enter your password");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:3000/delete-account", {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    alert("Account deleted successfully. You can now sign up with this email.");
+                    deleteConfirm.style.display = "none";
+                    accountExists.style.display = "none";
+                    deletePassword.value = "";
+                    localStorage.removeItem('userEmail');
+
+                } else {
+                    alert("Failed to delete account: " + (data.message || "Invalid password"));
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred while deleting account. Please try again.");
+            }
+        });
+
+        function validateEmail(email) {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|cfd\.nu\.edu\.pk|yahoo\.com)$/;
+            return emailRegex.test(email);
+        }
+
+        function validatePassword(password) {
+            return password.length >= 8;
+        }
+
+        function validateAge(age) {
+            return age >= 18 && age <= 100;
+        }
+
+        function validatePhoneNumber(phoneNumber) {
+            const phoneRegex = /^\d{10}$/;
+            return phoneRegex.test(phoneNumber);
+        }
+    });
+</script>
+</html>

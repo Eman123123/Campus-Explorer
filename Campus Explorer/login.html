@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url("https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9naW58ZW58MHx8MHx8fDA%3D");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* Auth Container */
+    .auth-container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .auth-container h2 {
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+
+    /* Input Groups */
+    .input-group {
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .input-group input:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: none;
+    }
+
+    /* Login Button */
+    .btn-login {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: rgba(98, 156, 164, 0.733);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-login:hover {
+        background-color: rgba(98, 156, 164, 0.9);
+    }
+
+    /* Social Login Buttons */
+    .social-login {
+        margin: 1.5rem 0;
+    }
+
+    .social-login p {
+        margin-bottom: 1rem;
+    }
+
+    .btn-social {
+        width: 100%;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-facebook {
+        background-color: rgba(98, 156, 164, 0.733);
+        color: white;
+    }
+
+    .btn-facebook:hover {
+        background-color: rgba(98, 156, 164, 0.9);
+    }
+
+    .btn-google {
+        background-color: rgba(98, 156, 164, 0.733);
+        color: white;
+    }
+
+    .btn-google:hover {
+        background-color: rgba(98, 156, 164, 0.9);
+    }
+
+    /* Sign-Up Section */
+    .signup-section {
+        margin-top: 1.5rem;
+    }
+
+    .signup-section p {
+        color: black;
+    }
+
+    .signup-section a {
+        color: black;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .signup-section a:hover {
+        text-decoration: underline;
+    }
+
+    /* Back Button */
+    .back-button {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        background-color: rgba(98, 156, 164, 0.733);
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+        background-color: rgba(98, 156, 164, 0.9);
+    }
+</style>
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Login</h2>
+        <form data-action="signin">
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <p id="emailError" class="error-message" style="display: none;">Email must end with @gmail.com, @cfd.nu.edu.pk, or @yahoo.com</p>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+                <p id="passwordError" class="error-message" style="display: none;">Password must be at least 8 characters long</p>
+            </div>
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+    <div class="social-login">
+        <p>Or login with</p>
+        <button class="btn-social btn-facebook">
+            <i class="fab fa-facebook-f"></i> Login with Facebook
+        </button>
+        <button class="btn-social btn-google">
+            <i class="fab fa-google"></i> Login with Google
+        </button>
+    </div>
+
+    <div class="signup-section">
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        <p><a href="forgot-password.html">Forgot Password?</a></p>
+    </div>
+
+    <button id="backButton" class="back-button">Back</button>
+</div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () 
+    {
+        const form = document.querySelector('form[data-action="signin"]');
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const backButton = document.getElementById("backButton");
+        const emailError = document.getElementById("emailError");
+        const passwordError = document.getElementById("passwordError");
+    // Real-time email validation
+    emailInput.addEventListener("input", function () {
+        if (validateEmail(emailInput.value)) {
+            emailError.style.display = "none"; // Hide email error message
+            passwordInput.disabled = false; // Enable password field
+        } else {
+            passwordInput.disabled = true; // Disable password field
+        }
+    });
+    passwordInput.addEventListener("mouseover", function () {
+        if (passwordInput.disabled && !validateEmail(emailInput.value)) {
+            emailError.style.display = "block"; // Show email error message
+        }
+    });
+
+    passwordInput.addEventListener("mouseout", function () {
+        emailError.style.display = "none"; // Hide email error message
+    });
+
+    // Show password error message when hovering over submit button
+    form.addEventListener("mouseover", function (event) {
+        if (event.target.tagName === "BUTTON" && !validatePassword(passwordInput.value)) {
+            passwordError.style.display = "block"; // Show password error message
+        }
+    });
+
+    form.addEventListener("mouseout", function () {
+        passwordError.style.display = "none"; // Hide password error message
+    });
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    // Validate inputs
+    if (!validateEmail(email)) {
+        alert("Email must end with @gmail.com, @cfd.nu.edu.pk, or @yahoo.com");
+        return;
+    }
+
+    if (!validatePassword(password)) {
+        alert("Password must be at least 8 characters long.");
+        return;
+    }
+
+    try {
+        const response = await fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert("Login successful!");
+            console.log("Server response:", result);
+            localStorage.setItem("userEmail", email);  
+
+            window.location.href = "index.html";
+        } else {
+            alert(result.message || "Login failed.");
+        }
+    } catch (error) {
+        console.error("Login request error:", error);
+        alert("Something went wrong. Please try again.");
+    }
+  });
+
+
+    // Handle back button click
+    backButton.addEventListener("click", function () {
+        history.back(); 
+    });
+
+    function validateEmail(email) 
+     {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|cfd\.nu\.edu\.pk|yahoo\.com)$/;
+        return emailRegex.test(email);
+      }
+
+    function validatePassword(password) {
+        return password.length >= 8;
+    }
+});
+</script>
+</html>
